@@ -1,21 +1,21 @@
 {
-  "name": "bch-dex",
+  "name": "xec-dex",
   "version": "2.0.2",
-  "description": "A DEX on BCH for trading SLP tokens.",
+  "description": "A DEX on eCash (XEC) blockchain for trading SLP eTokens.",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "start": "node index.js",
     "test": "npm run test:all",
-    "test:all": "export BCH_DEX=test && c8 --reporter=text mocha --exit --timeout 15000 --recursive test/unit test/e2e/automated/",
-    "test:unit": "export BCH_DEX=test && mocha --exit --timeout 15000 --recursive test/unit/",
-    "test:e2e:auto": "export BCH_DEX=test && mocha --exit --timeout 30000 test/e2e/automated/",
-    "test:integration": "export BCH_DEX=test && mocha --exit --timeout 45000 --recursive test/integration",
-    "test:temp": "export BCH_DEX=test && mocha --exit --timeout 15000 -g '#rate-limit' test/unit/json-rpc/",
+    "test:all": "export XEC_DEX=test && c8 --reporter=text mocha --exit --timeout 15000 --recursive test/unit test/e2e/automated/",
+    "test:unit": "export XEC_DEX=test && mocha --exit --timeout 15000 --recursive test/unit/",
+    "test:e2e:auto": "export XEC_DEX=test && mocha --exit --timeout 30000 test/e2e/automated/",
+    "test:integration": "export XEC_DEX=test && mocha --exit --timeout 45000 --recursive test/integration",
+    "test:temp": "export XEC_DEX=test && mocha --exit --timeout 15000 -g '#rate-limit' test/unit/json-rpc/",
     "lint": "standard --env mocha --fix",
     "docs": "./node_modules/.bin/apidoc -i src/ -o docs",
     "coverage": "c8 report --reporter=text-lcov | coveralls",
-    "coverage:report": "export BCH_DEX=test && c8 --reporter=html mocha --exit --timeout 15000 --recursive test/unit/ test/e2e/automated/"
+    "coverage:report": "export XEC_DEX=test && c8 --reporter=html mocha --exit --timeout 15000 --recursive test/unit/ test/e2e/automated/"
   },
   "author": "Chris Troutner <chris.troutner@gmail.com>",
   "contributors": [
@@ -23,10 +23,10 @@
   ],
   "license": "MIT",
   "apidoc": {
-    "title": "bch-dex",
+    "title": "xec-dex",
     "url": "localhost:5000"
   },
-  "repository": "Permissionless-Software-Foundation/bch-dex",
+  "repository": "Permissionless-Software-Foundation/xec-dex",
   "dependencies": {
     "@chris.troutner/retry-queue": "1.0.8",
     "@psf/bch-js": "6.5.1",

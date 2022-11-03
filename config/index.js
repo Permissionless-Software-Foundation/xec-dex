@@ -4,7 +4,7 @@ import development from './env/development.js'
 import production from './env/production.js'
 import test from './env/test.js'
 
-const env = process.env.BCH_DEX || 'development'
+const env = process.env.XEC_DEX || 'development'
 console.log(`Loading config for this environment: ${env}`)
 
 let config = development

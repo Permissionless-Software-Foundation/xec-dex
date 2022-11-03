@@ -42,11 +42,11 @@ export default {
   useFullStackCash: process.env.USE_FULLSTACKCASH ? true : false,
   consumerUrl: process.env.CONSUMER_URL
     ? process.env.CONSUMER_URL
-    : 'https://free-bch.fullstack.cash',
+    : 'https://xec-consumer-or1-usa.fullstackcash.nl',
   // : 'https://wa-usa-bch-consumer.fullstackcash.nl',
 
   // P2WDB URL that will accept API calls from the p2wdb npm library.
-  p2wdbUrl: process.env.P2WDB_URL ? process.env.P2WDB_URL : 'https://p2wdb.fullstack.cash',
+  p2wdbUrl: process.env.P2WDB_URL ? process.env.P2WDB_URL : 'https://xec-p2wdb.fullstack.cash',
 
   // FullStack.cash account information, used for automatic JWT handling.
   getJwtAtStartup: process.env.GET_JWT_AT_STARTUP ? true : false,
@@ -92,7 +92,7 @@ export default {
   webhookService: process.env.WEBHOOKSERVICE
     ? process.env.WEBHOOKSERVICE
     : 'http://localhost:5010/webhook', // P2WDB.
-  p2wdbAppId: process.env.APP_ID ? process.env.APP_ID : 'bch-dex-001',
+  p2wdbAppId: process.env.APP_ID ? process.env.APP_ID : 'xec-dex-001',
   webhookTarget: process.env.WEBHOOKTARGET
     ? process.env.WEBHOOKTARGET
     : 'http://localhost:5700/p2wdb',
