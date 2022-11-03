@@ -9,16 +9,16 @@ let currentEnv
 describe('#config', () => {
   before(() => {
     // Backup the current environment setting.
-    currentEnv = process.env.BCH_DEX
+    currentEnv = process.env.XEC_DEX
   })
 
   after(() => {
     // Restore the environment setting before starting these tests.
-    process.env.BCH_DEX = currentEnv
+    process.env.XEC_DEX = currentEnv
   })
 
   it('Should return development environment config by default', async () => {
-    process.env.BCH_DEX = 'dev'
+    process.env.XEC_DEX = 'dev'
 
     const importedConfig = await import('../../../config/index.js?foo=bar3')
     const config = importedConfig.default
@@ -31,7 +31,7 @@ describe('#config', () => {
     // Hack to dynamically import a library multiple times:
     // https://github.com/denoland/deno/issues/6946
 
-    process.env.BCH_DEX = 'test'
+    process.env.XEC_DEX = 'test'
 
     const importedConfig2 = await import('../../../config/index.js?foo=bar1')
     const config = importedConfig2.default
@@ -41,7 +41,7 @@ describe('#config', () => {
   })
 
   it('Should return test environment config', async () => {
-    process.env.BCH_DEX = 'prod'
+    process.env.XEC_DEX = 'prod'
 
     const importedConfig3 = await import('../../../config/index.js?foo=bar2')
     const config = importedConfig3.default

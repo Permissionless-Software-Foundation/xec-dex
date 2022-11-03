@@ -3,7 +3,7 @@
 */
 
 // Public npm libraries
-import BchWallet from 'minimal-slp-wallet'
+import BchWallet from 'minimal-ecash-wallet'
 
 import bitcoinJs from 'bitcoincashjs-lib'
 
@@ -76,8 +76,8 @@ class WalletAdapter {
     }
   }
 
-  // Create an instance of minimal-slp-wallet. Use data in the wallet.json file,
-  // and pass the bch-js information to the minimal-slp-wallet library.
+  // Create an instance of minimal-ecash-wallet. Use data in the wallet.json file,
+  // and pass the bch-js information to the minimal-ecash-wallet library.
   async instanceWallet (walletData) {
     try {
       // console.log(`instanceWallet() walletData: ${JSON.stringify(walletData, null, 2)}`)
@@ -98,7 +98,7 @@ class WalletAdapter {
         advancedConfig.restURL = this.config.consumerUrl
       }
 
-      // Instantiate minimal-slp-wallet.
+      // Instantiate minimal-ecash-wallet.
       this.bchWallet = new this.BchWallet(walletData.mnemonic, advancedConfig)
 
       // Wait for wallet to initialize.

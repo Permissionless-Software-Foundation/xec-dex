@@ -16,7 +16,7 @@ class P2wdbAdapter {
     // Dependency injection
     this.bchWallet = localConfig.bchWallet
     if (!this.bchWallet) {
-      throw new Error('Must pass an instance of minimal-slp-wallet as bchWallet when instantiating p2wdb.js adapter.')
+      throw new Error('Must pass an instance of minimal-ecash-wallet as bchWallet when instantiating p2wdb.js adapter.')
     }
 
     // Encapsulate dependencies

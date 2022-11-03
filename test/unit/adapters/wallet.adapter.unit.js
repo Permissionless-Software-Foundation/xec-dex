@@ -135,7 +135,7 @@ describe('#wallet', () => {
 
   describe('#generateSignature', () => {
     it('should return a signature', async () => {
-      // mock instance of minimal-slp-wallet
+      // mock instance of minimal-ecash-wallet
       uut.bchWallet = new MockBchWallet()
 
       const result = await uut.generateSignature('test')
@@ -146,7 +146,7 @@ describe('#wallet', () => {
 
     it('should catch and throw errors', async () => {
       try {
-        // mock instance of minimal-slp-wallet
+        // mock instance of minimal-ecash-wallet
         uut.bchWallet = new MockBchWallet()
 
         // force an error
@@ -165,7 +165,7 @@ describe('#wallet', () => {
 
   // describe('#burnPsf', () => {
   //   it('should burn PSF tokens and return the txid', async () => {
-  //     // mock instance of minimal-slp-wallet
+  //     // mock instance of minimal-ecash-wallet
   //     uut.bchWallet = new MockBchWallet()
   //
   //     const result = await uut.burnPsf()
@@ -177,7 +177,7 @@ describe('#wallet', () => {
   //
   //   it('should throw error if no PSF tokens are found', async () => {
   //     try {
-  //       // mock instance of minimal-slp-wallet
+  //       // mock instance of minimal-ecash-wallet
   //       uut.bchWallet = new MockBchWallet()
   //
   //       // Remove the PSF token from the mock data.
@@ -207,7 +207,7 @@ describe('#wallet', () => {
       // Ensure we open the test file, not the production wallet file.
       uut.WALLET_FILE = testWalletFile
 
-      // mock instance of minimal-slp-wallet
+      // mock instance of minimal-ecash-wallet
       uut.bchWallet = new MockBchWallet()
 
       const result = await uut.incrementNextAddress()
@@ -234,7 +234,7 @@ describe('#wallet', () => {
       // Ensure we open the test file, not the production wallet file.
       uut.WALLET_FILE = testWalletFile
 
-      // mock instance of minimal-slp-wallet
+      // mock instance of minimal-ecash-wallet
       uut.bchWallet = new MockBchWallet()
 
       const result = await uut.getKeyPair()

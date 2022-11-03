@@ -8,7 +8,7 @@ import { assert } from 'chai'
 import sinon from 'sinon'
 
 // const BCHJS = require('@psf/bch-js')
-import BchWallet from 'minimal-slp-wallet'
+import BchWallet from 'minimal-ecash-wallet'
 
 // Local libraries.
 import P2wdbAdapter from '../../../src/adapters/p2wdb-adapter.js'
@@ -34,7 +34,7 @@ describe('#P2wdbAdapter', () => {
 
         assert.fail('Unexpected coded path')
       } catch (err) {
-        assert.include(err.message, 'Must pass an instance of minimal-slp-wallet as bchWallet when instantiating p2wdb.js adapter.')
+        assert.include(err.message, 'Must pass an instance of minimal-ecash-wallet as bchWallet when instantiating p2wdb.js adapter.')
       }
     })
   })
