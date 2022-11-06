@@ -65,8 +65,8 @@ services:
       #- 5668:5668 # IPFS TCP port
       #- 5669:5669 # IPFS WS Port
     volumes:
-      - ../data/ipfsdata/p2wdb:/home/safeuser/ipfs-p2wdb-service/.ipfsdata/p2wdb
-      - ./p2wdb/start-production.sh:/home/safeuser/ipfs-p2wdb-service/start-production.sh
+      - ../data/ipfsdata/p2wdb:/home/safeuser/ecash-p2wdb-service/.ipfsdata/p2wdb
+      - ./p2wdb/start-production.sh:/home/safeuser/ecash-p2wdb-service/start-production.sh
     restart: always
 
   xec-dex:
@@ -89,8 +89,8 @@ services:
     ports:
       - '5700:5700' # <host port>:<container port>
     volumes:
-      - ../scripts/wallet.json:/home/safeuser/bch-dex/wallet.json
-      - ./bch-dex/start-production.sh:/home/safeuser/bch-dex/start-production.sh
+      - ../scripts/wallet.json:/home/safeuser/xec-dex/wallet.json
+      - ./xec-dex/start-production.sh:/home/safeuser/xec-dex/start-production.sh
     restart: always
 
   xec-dex-ui:
