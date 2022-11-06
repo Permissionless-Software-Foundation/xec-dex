@@ -159,9 +159,9 @@ class WalletAdapter {
       const masterHDNode = this.bchWallet.bchjs.HDNode.fromSeed(rootSeed)
 
       // HDNode of BIP44 account
-      // const account = this.bchWallet.bchjs.HDNode.derivePath(masterHDNode, "m/44'/245'/0'")
+      // const account = this.bchWallet.bchjs.HDNode.derivePath(masterHDNode, "m/44'/1899'/0'")
 
-      const childNode = masterHDNode.derivePath(`m/44'/245'/0'/0/${hdIndex}`)
+      const childNode = masterHDNode.derivePath(`m/44'/1899'/0'/0/${hdIndex}`)
 
       const cashAddress = this.bchWallet.bchjs.HDNode.toCashAddress(childNode)
       console.log('Generating a new key pair for cashAddress: ', cashAddress)

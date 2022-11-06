@@ -29,7 +29,7 @@
   "repository": "Permissionless-Software-Foundation/xec-dex",
   "dependencies": {
     "@chris.troutner/retry-queue": "1.0.8",
-    "@psf/bch-js": "6.5.1",
+    "@psf/bch-js": "6.5.3",
     "axios": "0.27.2",
     "bch-message-lib": "2.2.1",
     "bcryptjs": "2.4.3",
@@ -61,11 +61,11 @@
     "passport-local": "1.0.0",
     "public-ip": "4.0.4",
     "winston": "3.3.3",
-    "winston-daily-rotate-file": "4.5.0"
+    "winston-daily-rotate-file": "4.5.0",
+    "xec-token-sweep": "1.0.4"
   },
   "devDependencies": {
     "apidoc": "0.51.1",
-    "bch-token-sweep": "2.1.2",
     "c8": "7.12.0",
     "chai": "4.3.0",
     "coveralls": "2.11.4",

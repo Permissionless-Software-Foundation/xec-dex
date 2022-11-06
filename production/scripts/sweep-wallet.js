@@ -8,7 +8,7 @@
 
 // Public npm libraries
 // const BCHJS = require('@psf/bch-js')
-import BchTokenSweep from 'bch-token-sweep/index.js'
+import BchTokenSweep from 'xec-token-sweep/index.js'
 
 // Local libraries
 import WalletAdapter from '../../src/adapters/wallet.js'
@@ -39,7 +39,7 @@ async function sweepFunds () {
 
     do {
       // Generate a keypair from the HD wallet.
-      const childNode = masterHDNode.derivePath(`m/44'/245'/0'/0/${hdIndex}`)
+      const childNode = masterHDNode.derivePath(`m/44'/1899'/0'/0/${hdIndex}`)
       const cashAddress = bchjs.HDNode.toCashAddress(childNode)
       const wifToSweep = bchjs.HDNode.toWIF(childNode)
 
