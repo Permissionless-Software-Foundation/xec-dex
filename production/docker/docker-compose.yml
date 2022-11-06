@@ -102,7 +102,7 @@ services:
     #image: christroutner/bch-dex-ui:v1.2.4
     container_name: xec-dex-ui
     environment:
-      SERVER: 'http://192.168.2.3'
+      REACT_APP_SERVER: 'http://192.168.2.3'
     logging:
       driver: 'json-file'
       options:
