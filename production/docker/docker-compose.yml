@@ -15,7 +15,7 @@ services:
 
   ipfs-xec-dex:
     # https://github.com/christroutner/trickle-ipfs
-    image: christroutner/trickle-ipfs:v1.0.1
+    image: christroutner/trickle-ipfs:v1.0.2
     #build:
     #  context: ./
     #  dockerfile: Dockerfile
