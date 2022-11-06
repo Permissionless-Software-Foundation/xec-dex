@@ -34,7 +34,7 @@ export DBURL=mongodb://172.17.0.1:5668/p2wdb-service-dev
 #export IPFS_WS_PORT=5669
 
 # Configure REST API port
-export PORT=5667
+export PORT=7700
 
 export P2W_ENV=production
 export IPFS_HOST=172.17.0.1
