@@ -60,6 +60,7 @@ services:
     mem_limit: 1gb
     links:
       - mongo-xec-dex
+      - ipfs-xec-dex
     ports:
       # <host port>:<container port>
       - 5667:5667 # REST API
