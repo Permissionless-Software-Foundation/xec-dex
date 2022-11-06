@@ -40,6 +40,7 @@ services:
     ]
     volumes:
       - ../data/go-ipfs/data:/root/.ipfs
+      - ./ipfs/start-ipfs.sh:/root/start-ipfs.sh
     restart: always
 
   p2wdb-xec-dex:
