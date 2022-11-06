@@ -18,15 +18,15 @@ export DEBUG_LEVEL=1
 
 
 # Production database connection string.
-export DBURL=mongodb://172.17.0.1:5666/xec-swap-service-prod
+export DBURL=mongodb://172.17.0.1:5668/xec-swap-service-prod
 
 # Configure REST API port
-export PORT=5700
+export PORT=7667
 
 # bch-dex specific env vars
 export XEC_DEX=prod
-export WEBHOOKSERVICE=http://172.17.0.1:5667/webhook
-export WEBHOOKTARGET=http://172.17.0.1:5700/p2wdb
+export WEBHOOKSERVICE=http://172.17.0.1:7700/webhook
+export WEBHOOKTARGET=http://172.17.0.1:7667/p2wdb
 export APP_ID=xec-dex-001
 
 npm start
