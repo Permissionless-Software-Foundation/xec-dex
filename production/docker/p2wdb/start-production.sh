@@ -7,7 +7,7 @@
 export MNEMONIC="mass response fiscal world message exact series swallow forward confirm canoe festival"
 
 # The human readable name this IPFS node identifies as.
-export COORD_NAME=generic-p2wdb-production
+export COORD_NAME=generic-xec-p2wdb-production
 
 # Allow this node to function as a circuit relay. It must not be behind a firewall.
 #export ENABLE_CIRCUIT_RELAY=true

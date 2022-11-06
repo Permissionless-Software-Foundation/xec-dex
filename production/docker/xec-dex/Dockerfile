@@ -4,7 +4,7 @@
 #IMAGE BUILD COMMANDS
 # ct-base-ubuntu = ubuntu 18.04 + nodejs v10 LTS
 #FROM christroutner/ct-base-ubuntu
-FROM ubuntu:20.04 as builder
+FROM ubuntu:20.04
 MAINTAINER Chris Troutner <chris.troutner@gmail.com>
 
 #Update the OS and install any OS packages needed.
@@ -37,7 +37,7 @@ WORKDIR /home/safeuser
 RUN npm install -g npm
 
 # npm mirror to prevent direct dependency on npm.
-#RUN npm set registry http://94.130.170.209:4873/
+RUN npm set registry http://94.130.170.209:4873/
 
 # Switch to user account.
 #USER safeuser
@@ -46,11 +46,11 @@ RUN npm install -g npm
 
 # Clone the rest.bitcoin.com repository
 WORKDIR /home/safeuser
-RUN git clone https://github.com/Permissionless-Software-Foundation/bch-dex-ui-v2
+RUN git clone https://github.com/Permissionless-Software-Foundation/xec-dex
 
 # Switch to the desired branch. `master` is usually stable,
 # and `stage` has the most up-to-date changes.
-WORKDIR /home/safeuser/bch-dex-ui-v2
+WORKDIR /home/safeuser/xec-dex
 
 # For development: switch to unstable branch
 RUN git checkout ct-unstable
@@ -60,14 +60,22 @@ RUN git checkout ct-unstable
 #RUN npm install -g @mapbox/node-pre-gyp
 RUN npm install
 
-# Build the site
-RUN CI=true npm run build
+# Generate the API docs
+RUN npm run docs
 
-# Load the NGINX image.
-FROM nginx
-EXPOSE 80
+# Copy the wallet files
+#COPY wallet.json wallet.json
 
-# Copy the files built in the first container to the new NGINX container.
-COPY --from=builder /home/safeuser/bch-dex-ui-v2/build /usr/share/nginx/html
+#VOLUME /home/safeuser/keys
 
-#USER safeuser
+# Expose the port the API will be served on.
+#EXPOSE 5010
+
+# Start the application.
+CMD ["./start-production.sh"]
+
+#CMD ["npm", "start"]
+
+# Used for debugging
+#COPY dummy-app.js dummy-app.js
+#CMD ["node", "dummy-app.js"]

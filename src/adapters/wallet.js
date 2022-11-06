@@ -266,7 +266,7 @@ class WalletAdapter {
       }
 
       // Calculate sats needed to pay the offer.
-      const satsNeeded = offerInfo.numTokens * parseInt(offerInfo.rateInBaseUnit)
+      const satsNeeded = Math.ceil(offerInfo.numTokens * parseInt(offerInfo.rateInBaseUnit))
       if (isNaN(satsNeeded)) throw new Error('Can not calculate needed sats')
 
       // Calculate miner fees.
@@ -308,7 +308,15 @@ class WalletAdapter {
       )
 
       // Get seller address
-      const sellerAddr = offerInfo.makerAddr
+      let sellerAddr = offerInfo.makerAddr
+
+      // If eCash address, convert to BCH address.
+      if (sellerAddr.includes('ecash') || sellerAddr.includes('etoken')) {
+        sellerAddr = bchjs.Address.ecashtoCashAddress(sellerAddr)
+      }
+
+      // Convert to legacy address to avoid false negative errors.
+      sellerAddr = bchjs.Address.toLegacyAddress(sellerAddr)
 
       // Send payment to the offer side
       transactionBuilder.addOutput(sellerAddr, satsNeeded)
