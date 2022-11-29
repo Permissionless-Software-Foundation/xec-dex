@@ -44,10 +44,10 @@ services:
     restart: always
 
   p2wdb-xec-dex:
-    build:
-      context: ./p2wdb/
-      dockerfile: Dockerfile
-    #image: christroutner/p2wdb:v3.1.8
+    #build:
+    #  context: ./p2wdb/
+    #  dockerfile: Dockerfile
+    image: christroutner/p2wdb-xec:v3.1.8
     container_name: p2wdb-xec-dex
     environment:
       CONSUMER_URL: 'https://xec-consumer-or1-usa.fullstackcash.nl'
@@ -72,10 +72,10 @@ services:
     restart: always
 
   xec-dex:
-    build:
-      context: ./xec-dex/
-      dockerfile: Dockerfile
-    #image: christroutner/bch-dex:v2.0.8
+    #build:
+    #  context: ./xec-dex/
+    #  dockerfile: Dockerfile
+    image: christroutner/xec-dex-v1.0.0
     container_name: xec-dex
     environment:
       CONSUMER_URL: 'https://xec-consumer-or1-usa.fullstackcash.nl'
@@ -96,10 +96,10 @@ services:
     restart: always
 
   xec-dex-ui:
-    build:
-      context: ./xec-dex-ui/
-      dockerfile: Dockerfile
-    #image: christroutner/bch-dex-ui:v1.2.4
+    #build:
+    #  context: ./xec-dex-ui/
+    #  dockerfile: Dockerfile
+    image: christroutner/xec-dex-ui-v1.0.0
     container_name: xec-dex-ui
     environment:
       REACT_APP_SERVER: 'http://192.168.2.3'
