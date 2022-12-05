@@ -13,7 +13,7 @@ This repository contains the back end code. The user interface is contained in t
 ## Documenation
 
 - **Please review the [Documentation site](https://bch-dex-docs.fullstack.cash) before continuing with this README.**
-- Additional [developer https://github.com/Permissionless-Software-Foundation/xec-dex/tree/master/dev-docsd.ocumentation](./dev-docs).
+- Additional [developer documentation](./dev-docs).
 
 
 ## Participate
