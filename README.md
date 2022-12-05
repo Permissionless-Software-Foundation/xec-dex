@@ -12,7 +12,9 @@ This repository contains the back end code. The user interface is contained in t
 
 ## Documenation
 
-**Please review the [Documentation site](https://bch-dex-docs.fullstack.cash) before continuing with this README.**
+- **Please review the [Documentation site](https://bch-dex-docs.fullstack.cash) before continuing with this README.**
+- Additional [developer https://github.com/Permissionless-Software-Foundation/xec-dex/tree/master/dev-docsd.ocumentation](./dev-docs).
+
 
 ## Participate
 This is an open source project, and we encourage other JavaScript developers to participate in its creation and maintenance. We have two chat rooms for the community:
